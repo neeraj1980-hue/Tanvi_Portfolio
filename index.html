@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanvi Dubey | Official Professional Portfolio</title>
+  <meta name="description" content="Portfolio of Tanvi Dubey - BBA in Logistics at Dr. MPS Memorial Group of Institutions, Agra. AI tools, computer proficiency, badminton, basketball & dance.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              800: '#141e33',
+              900: '#0c1322',
+              950: '#060a14',
+            },
+            gold: {
+              300: '#f8e3a1',
+              400: '#f3d172',
+              500: '#d4af37',
+              600: '#b89224',
+              700: '#8f6e16',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #060a14;
+      color: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(30, 58, 138, 0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(15, 23, 42, 0.9) 0px, transparent 100%);
+      background-attachment: fixed;
+    }
+
+    .glass-card {
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .glass-card-hover {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card-hover:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212, 175, 55, 0.45);
+      box-shadow: 0 18px 40px -10px rgba(212, 175, 55, 0.18), 0 0 20px rgba(212, 175, 55, 0.1);
+    }
+
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #fcebc2 0%, #d4af37 45%, #f3d172 75%, #aa821d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #d4af37 0%, #f3d172 50%, #c69214 100%);
+      color: #060a14;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45);
+      filter: brightness(1.06);
+    }
+
+    .btn-outline-gold {
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: #f3d172;
+      background: rgba(212, 175, 55, 0.05);
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-gold:hover {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: #d4af37;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
+    }
+
+    @keyframes eqBar {
+      0%, 100% { height: 6px; }
+      50% { height: 22px; }
+    }
+
+    .anim-float {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .anim-float-delayed {
+      animation: float 5s ease-in-out 2.5s infinite;
+    }
+
+    .anim-glow {
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+
+    .eq-bar-1 { animation: eqBar 1.2s ease-in-out infinite; }
+    .eq-bar-2 { animation: eqBar 0.9s ease-in-out 0.2s infinite; }
+    .eq-bar-3 { animation: eqBar 1.5s ease-in-out 0.4s infinite; }
+    .eq-bar-4 { animation: eqBar 1.1s ease-in-out 0.1s infinite; }
+  </style>
+</head>
+<body class="selection:bg-gold-500 selection:text-navy-950">
+
+  <!-- ==================== STICKY NAVIGATION ==================== -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 bg-navy-950/85 backdrop-blur-md border-b border-gold-500/20 shadow-xl shadow-black/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 via-gold-500 to-amber-700 flex items-center justify-center text-navy-950 font-serif font-bold text-lg shadow-md shadow-gold-500/30 group-hover:scale-105 transition-transform duration-300">
+          TD
+        </div>
+        <div>
+          <span class="font-serif text-xl font-bold tracking-wide text-white group-hover:text-gold-400 transition-colors">
+            Tanvi Dubey
+          </span>
+          <span class="block text-[10px] tracking-widest text-gold-400/80 uppercase font-medium">
+            BBA Logistics • AI & Tech
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+        <a href="#home" class="px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-gold-400 rounded-lg transition-colors hover:bg-white/5">Home</a>
+        <a href="#about" class="px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-gold-400 rounded-lg transition-colors hover:bg-white/5">About</a>
+        <a href="#education" class="px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-gold-400 rounded-lg transition-colors hover:bg-white/5">Education</a>
+        <a href="#skills" class="px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-gold-400 rounded-lg transition-colors hover:bg-white/5">Skills & AI</a>
+        <a href="#hobbies" class="px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-gold-400 rounded-lg transition-colors hover:bg-white/5">Hobbies & Sports</a>
+        <a href="#contact" class="px-3 py-1.5 text-sm font-medium text-slate-300 hover:text-gold-400 rounded-lg transition-colors hover:bg-white/5">Contact</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="tel:9412632249" class="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold btn-gold">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          <span>Call: 9412632249</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-toggle-btn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10" aria-label="Toggle menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-navy-950/98 backdrop-blur-xl border-b border-gold-500/20 px-6 pt-3 pb-6 space-y-3">
+      <a href="#home" class="mobile-link block py-2 text-base font-medium text-slate-200 hover:text-gold-400 border-b border-slate-800/60">Home</a>
+      <a href="#about" class="mobile-link block py-2 text-base font-medium text-slate-200 hover:text-gold-400 border-b border-slate-800/60">About Me</a>
+      <a href="#education" class="mobile-link block py-2 text-base font-medium text-slate-200 hover:text-gold-400 border-b border-slate-800/60">Education</a>
+      <a href="#skills" class="mobile-link block py-2 text-base font-medium text-slate-200 hover:text-gold-400 border-b border-slate-800/60">Skills & AI Tools</a>
+      <a href="#hobbies" class="mobile-link block py-2 text-base font-medium text-slate-200 hover:text-gold-400 border-b border-slate-800/60">Hobbies & Sports</a>
+      <a href="#contact" class="mobile-link block py-2 text-base font-medium text-slate-200 border-b border-slate-800/60">Contact</a>
+      <div class="pt-2 flex flex-col gap-2">
+        <a href="tel:9412632249" class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold btn-gold">
+          <i data-lucide="phone" class="w-4 h-4"></i>
+          <span>Call: 9412632249</span>
+        </a>
+        <a href="https://wa.me/919412632249" target="_blank" class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold btn-outline-gold">
+          <span>WhatsApp Chat</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="home" class="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden">
+    <!-- Ambient Glows -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gold-500/10 rounded-full blur-[140px] pointer-events-none -z-10 anim-glow"></div>
+    <div class="absolute top-1/3 right-10 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+    <div class="absolute bottom-10 left-10 w-80 h-80 bg-amber-600/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left: Intro & Details -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold tracking-wider uppercase backdrop-blur-sm">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-400"></i>
+            <span>Official Professional Portfolio</span>
+          </div>
+
+          <div class="space-y-2">
+            <h2 class="text-sm sm:text-base font-medium text-slate-300 tracking-wide uppercase">
+              Hello & Welcome
+            </h2>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight">
+              I am <span class="text-gold-gradient">Tanvi Dubey</span>
+            </h1>
+            <p class="text-lg sm:text-xl font-medium text-slate-200 pt-1 font-serif italic text-gold-300/90">
+              BBA Logistics Scholar • AI & Tech Enthusiast • Student Athlete
+            </p>
+          </div>
+
+          <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Currently pursuing <span class="text-white font-semibold">BBA in Logistics</span> at 
+            <span class="text-gold-300 font-semibold"> Dr. MPS Memorial Group of Institutions</span>, Agra. 
+            Blending solid computer foundations and modern <span class="text-white font-semibold">AI tools</span> with 
+            the dedication, reflexes, and team leadership forged in badminton, basketball, and dance.
+          </p>
+
+          <!-- Badges -->
+          <div class="flex flex-wrap gap-2.5 justify-center lg:justify-start pt-1">
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-700/60 text-xs text-slate-300">
+              <i data-lucide="book-open" class="w-3.5 h-3.5 text-gold-400"></i>
+              <span>Dr. MPS Memorial Group of Institutions</span>
+            </div>
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-700/60 text-xs text-slate-300">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-gold-400"></i>
+              <span>Sikandra, Agra</span>
+            </div>
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-700/60 text-xs text-slate-300">
+              <i data-lucide="calendar" class="w-3.5 h-3.5 text-gold-400"></i>
+              <span>DOB: 10 Nov 2007</span>
+            </div>
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-700/60 text-xs text-slate-300">
+              <i data-lucide="activity" class="w-3.5 h-3.5 text-gold-400"></i>
+              <span>Badminton & Basketball</span>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3">
+            <a href="#about" class="btn-gold px-6 py-3 rounded-full text-sm font-semibold flex items-center gap-2 shadow-lg shadow-gold-500/20">
+              <span>Explore My Profile</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+
+            <a href="#contact" class="btn-outline-gold px-6 py-3 rounded-full text-sm font-semibold flex items-center gap-2">
+              <span>Contact Directly</span>
+              <i data-lucide="phone" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- Quick Metrics -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-800/80">
+            <div class="p-3 rounded-xl bg-slate-900/50 border border-slate-800 text-center lg:text-left">
+              <div class="text-xl font-bold font-serif text-gold-400">BBA</div>
+              <div class="text-[11px] text-slate-400 font-medium">Logistics Specialization</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/50 border border-slate-800 text-center lg:text-left">
+              <div class="text-xl font-bold font-serif text-white">AI Tools</div>
+              <div class="text-[11px] text-slate-400 font-medium">Productivity & Prompting</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/50 border border-slate-800 text-center lg:text-left">
+              <div class="text-xl font-bold font-serif text-gold-400">2 Sports</div>
+              <div class="text-[11px] text-slate-400 font-medium">Badminton & Basketball</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/50 border border-slate-800 text-center lg:text-left">
+              <div class="text-xl font-bold font-serif text-white">Agra</div>
+              <div class="text-[11px] text-slate-400 font-medium">Uttar Pradesh, India</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Photo Frame with Floating Badges -->
+        <div class="lg:col-span-5 flex justify-center items-center relative">
+          <div class="relative w-72 sm:w-80 md:w-96 aspect-[4/5] group">
+            
+            <!-- Outer Glow -->
+            <div class="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-gold-600 via-amber-400 to-yellow-200 opacity-40 blur-xl group-hover:opacity-70 transition duration-700 anim-glow"></div>
+            
+            <!-- Framing -->
+            <div class="relative w-full h-full rounded-2xl overflow-hidden p-1.5 bg-gradient-to-b from-gold-400/80 via-amber-600/40 to-slate-900/90 shadow-2xl shadow-black/80 border border-gold-500/40">
+              <div class="w-full h-full rounded-xl overflow-hidden relative bg-navy-950">
+                <img
+                  id="profile-hero-img"
+                  src="tanvi.jpg"
+                  alt="Tanvi Dubey"
+                  class="w-full h-full object-cover object-top filter contrast-[1.02] saturate-[1.05] group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-30"></div>
+              </div>
+            </div>
+
+            <!-- Floating Badge 1: Top Right -->
+            <div class="absolute -top-4 -right-4 sm:-right-6 bg-navy-950/95 backdrop-blur-md border border-gold-500/40 py-2 px-3.5 rounded-2xl shadow-xl shadow-black/50 flex items-center gap-2.5 anim-float">
+              <div class="w-8 h-8 rounded-xl bg-gold-500/20 flex items-center justify-center text-gold-400">
+                <i data-lucide="award" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Degree</div>
+                <div class="text-xs font-bold text-white">BBA Logistics</div>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2: Bottom Left -->
+            <div class="absolute -bottom-5 -left-4 sm:-left-6 bg-navy-950/95 backdrop-blur-md border border-gold-500/40 py-2.5 px-4 rounded-2xl shadow-xl shadow-black/50 flex items-center gap-3 anim-float-delayed">
+              <div class="w-9 h-9 rounded-xl bg-blue-500/20 flex items-center justify-center text-gold-400">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Digital Edge</div>
+                <div class="text-xs font-bold text-slate-100">AI & Computer Tools</div>
+              </div>
+            </div>
+
+            <!-- Floating Badge 3: Status -->
+            <div class="absolute top-1/2 -right-6 hidden sm:flex bg-navy-950/90 backdrop-blur-md border border-slate-700/80 py-1.5 px-3 rounded-xl shadow-lg items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span class="text-[11px] font-medium text-slate-200">Open to Opportunities</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section id="about" class="py-24 relative overflow-hidden bg-navy-950/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider">
+          <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+          <span>Personal Narrative</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white">
+          About <span class="text-gold-gradient">Tanvi Dubey</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          An aspiring business and logistics professional combining digital savvy with athletic discipline.
+        </p>
+        <div class="w-20 h-1 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+        
+        <!-- Bio Narrative -->
+        <div class="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8 space-y-5">
+          <div class="flex items-center gap-3 pb-4 border-b border-slate-800">
+            <div class="w-10 h-10 rounded-xl bg-gold-500/20 flex items-center justify-center text-gold-400">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-serif font-bold text-white">Professional Biography</h3>
+              <p class="text-xs text-slate-400">Education, Technological Adoption & Vision</p>
+            </div>
+          </div>
+
+          <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p>
+              Hello! I am <strong class="text-gold-300">Tanvi Dubey</strong>, an energetic student from Agra, Uttar Pradesh, 
+              born on <strong class="text-white">10 November 2007</strong>. I am currently pursuing my 
+              <strong class="text-white"> Bachelor of Business Administration (BBA) in Logistics</strong> from 
+              the esteemed <strong class="text-gold-300">Dr. MPS Memorial Group of Institutions</strong> in Agra.
+            </p>
+            <p>
+              My focus centers on the operational engines that power contemporary commerce: supply chain management, 
+              warehouse workflows, and multi-modal distribution. In parallel, I actively leverage 
+              <strong class="text-white">modern AI tools</strong> (including generative text systems, Canva AI, and research copilots) 
+              alongside core computer suites (Excel, Word, PowerPoint) to optimize productivity, draft precise documentation, and present impactful ideas.
+            </p>
+            <p>
+              Beyond academia, I am an enthusiastic athlete and creative performer. On the court, I play 
+              <strong class="text-gold-300">badminton and basketball</strong>, both of which have taught me sharp reflexes, endurance, 
+              and the value of selfless team coordination. In moments of creative expression, dance and listening to music keep me 
+              harmonious, focused, and energized.
+            </p>
+          </div>
+
+          <div class="pt-2">
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-gold-500/20 text-xs sm:text-sm text-slate-300 flex items-start gap-3">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-400 shrink-0 mt-0.5"></i>
+              <span>
+                <strong class="text-gold-300">Guiding Philosophy:</strong> "Consistency in preparation, agility in sports, and smart utilization of AI tools create a balanced path to leadership and professional excellence."
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Details Card -->
+        <div class="lg:col-span-5 glass-card rounded-2xl p-6 sm:p-8 space-y-4">
+          <h3 class="text-lg font-serif font-bold text-white pb-3 border-b border-slate-800 flex items-center gap-2">
+            <i data-lucide="user" class="w-5 h-5 text-gold-400"></i>
+            <span>Personal Profile & Location</span>
+          </h3>
+
+          <div class="space-y-3">
+            <div class="flex items-start gap-3 p-2 rounded-xl hover:bg-slate-800/40 transition-colors">
+              <div class="w-8 h-8 rounded-lg bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 shrink-0">
+                <i data-lucide="user" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Full Name</div>
+                <div class="text-sm font-medium text-slate-200">Tanvi Dubey</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-2 rounded-xl hover:bg-slate-800/40 transition-colors">
+              <div class="w-8 h-8 rounded-lg bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 shrink-0">
+                <i data-lucide="calendar" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Date of Birth</div>
+                <div class="text-sm font-medium text-slate-200">10 November 2007</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-2 rounded-xl hover:bg-slate-800/40 transition-colors">
+              <div class="w-8 h-8 rounded-lg bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 shrink-0">
+                <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Program & Institute</div>
+                <div class="text-sm font-medium text-slate-200">BBA Logistics • Dr. MPS Memorial Group of Institutions</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-2 rounded-xl hover:bg-slate-800/40 transition-colors">
+              <div class="w-8 h-8 rounded-lg bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 shrink-0">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Mobile Contact</div>
+                <div class="text-sm font-medium text-slate-200 font-mono">+91 9412632249</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-2 rounded-xl hover:bg-slate-800/40 transition-colors">
+              <div class="w-8 h-8 rounded-lg bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 shrink-0">
+                <i data-lucide="map-pin" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Address</div>
+                <div class="text-xs font-medium text-slate-200 leading-snug">
+                  C Block 807, Ram Raghu Ananda Phase-2, Sikandra, Agra (Near Yatharth Hospital), Uttar Pradesh
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2 border-t border-slate-800">
+            <a href="tel:9412632249" class="w-full text-center py-2.5 rounded-xl text-xs font-semibold btn-gold flex items-center justify-center gap-2">
+              <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+              <span>Call Tanvi Directly</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 4 Core Pillars -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-card glass-card-hover rounded-2xl p-6 group">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-12 h-12 rounded-xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform">
+              <i data-lucide="truck" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-800 text-gold-400 border border-gold-500/20">Specialization</span>
+          </div>
+          <h4 class="text-base font-bold text-white group-hover:text-gold-300 transition-colors">BBA Logistics</h4>
+          <p class="text-xs text-slate-400 leading-relaxed mt-2">
+            Mastering supply chain channels, inventory logistics, and operational efficiency principles.
+          </p>
+        </div>
+
+        <div class="glass-card glass-card-hover rounded-2xl p-6 group">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-800 text-blue-400 border border-blue-500/20">Tech & AI</span>
+          </div>
+          <h4 class="text-base font-bold text-white group-hover:text-gold-300 transition-colors">AI & Modern Tools</h4>
+          <p class="text-xs text-slate-400 leading-relaxed mt-2">
+            Using AI prompting, Canva design, and office spreadsheets for high-efficiency digital workflows.
+          </p>
+        </div>
+
+        <div class="glass-card glass-card-hover rounded-2xl p-6 group">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+              <i data-lucide="trophy" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-800 text-amber-400 border border-amber-500/20">Sports</span>
+          </div>
+          <h4 class="text-base font-bold text-white group-hover:text-gold-300 transition-colors">Student Athlete</h4>
+          <p class="text-xs text-slate-400 leading-relaxed mt-2">
+            Badminton and basketball sharpen quick reflexes, physical stamina, and trust-based teamwork.
+          </p>
+        </div>
+
+        <div class="glass-card glass-card-hover rounded-2xl p-6 group">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-12 h-12 rounded-xl bg-pink-500/15 border border-pink-500/30 flex items-center justify-center text-pink-400 group-hover:scale-110 transition-transform">
+              <i data-lucide="heart" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-800 text-pink-400 border border-pink-500/20">Arts</span>
+          </div>
+          <h4 class="text-base font-bold text-white group-hover:text-gold-300 transition-colors">Dance & Music</h4>
+          <p class="text-xs text-slate-400 leading-relaxed mt-2">
+            Dance and musical melodies nourish creativity, stage poise, and a positive mindset.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== EDUCATION SECTION ==================== -->
+  <section id="education" class="py-24 relative overflow-hidden bg-navy-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider">
+          <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+          <span>Academic Milestones</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white">
+          Education & <span class="text-gold-gradient">Institute</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Solid academic training at Dr. MPS Memorial Group of Institutions, Agra.
+        </p>
+        <div class="w-20 h-1 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-4"></div>
+      </div>
+
+      <!-- Timeline Cards -->
+      <div class="space-y-8 mb-16">
+        
+        <!-- Primary Degree Card -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 relative border-gold-500/50 shadow-xl shadow-gold-500/5 bg-gradient-to-br from-slate-900/90 via-navy-900/90 to-slate-900/90">
+          <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-4 mb-4">
+            <div class="space-y-1">
+              <div class="flex flex-wrap items-center gap-3">
+                <h3 class="text-xl sm:text-2xl font-serif font-bold text-white">
+                  Bachelor of Business Administration (BBA) in Logistics
+                </h3>
+                <span class="text-xs px-3 py-1 rounded-full font-semibold bg-gold-500/20 text-gold-300 border border-gold-500/40">
+                  Current Degree (In Progress)
+                </span>
+              </div>
+              <div class="text-gold-400 font-medium text-base">
+                Dr. MPS Memorial Group of Institutions, Agra
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400">
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="calendar" class="w-4 h-4 text-gold-400"></i>
+                <span>2024 - Present</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="map-pin" class="w-4 h-4 text-gold-400"></i>
+                <span>Agra, Uttar Pradesh</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+            A comprehensive management program focused on supply chain optimization, inventory and warehouse systems, freight coordination, enterprise planning, and modern business logistics.
+          </p>
+
+          <div class="space-y-2 pt-2 border-t border-slate-800/80">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">
+              Key Academic Highlights:
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+              <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
+                <i data-lucide="check-circle" class="w-4 h-4 text-gold-400 shrink-0 mt-0.5"></i>
+                <span>Specialized coursework in Supply Chain & Logistics Operations</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
+                <i data-lucide="check-circle" class="w-4 h-4 text-gold-400 shrink-0 mt-0.5"></i>
+                <span>Application of modern AI tools for business research and presentations</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
+                <i data-lucide="check-circle" class="w-4 h-4 text-gold-400 shrink-0 mt-0.5"></i>
+                <span>Active involvement in collegiate sports meets and cultural dance events</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
+                <i data-lucide="check-circle" class="w-4 h-4 text-gold-400 shrink-0 mt-0.5"></i>
+                <span>Team coordinator in student business workshops and group simulations</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Secondary Schooling Card -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 relative border-slate-800/80 hover:border-slate-700 transition-colors">
+          <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-4 mb-4">
+            <div class="space-y-1">
+              <div class="flex flex-wrap items-center gap-3">
+                <h3 class="text-xl font-serif font-bold text-white">
+                  Higher Secondary Education & Schooling
+                </h3>
+                <span class="text-xs px-3 py-1 rounded-full font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                  Completed
+                </span>
+              </div>
+              <div class="text-gold-400/90 font-medium text-sm">
+                Senior Secondary School, Agra
+              </div>
+            </div>
+
+            <div class="flex items-center gap-1.5 text-xs text-slate-400">
+              <i data-lucide="map-pin" class="w-4 h-4 text-gold-400"></i>
+              <span>Agra, Uttar Pradesh</span>
+            </div>
+          </div>
+
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            Established strong academic foundations in business principles, digital computer literacy, analytical mathematics, and active participation in inter-school badminton tournaments.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Curriculum Highlights Grid -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border border-gold-500/30">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-gold-500/20 flex items-center justify-center text-gold-400">
+            <i data-lucide="layers" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-serif font-bold text-white">Logistics & Business Curriculum Pillars</h3>
+            <p class="text-xs text-slate-400">Core subjects studied at Dr. MPS Memorial Group of Institutions</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1.5 hover:border-gold-500/40 transition-colors">
+            <h4 class="text-sm font-bold text-gold-300">Supply Chain Systems</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">End-to-end movement of goods and logistical coordination.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1.5 hover:border-gold-500/40 transition-colors">
+            <h4 class="text-sm font-bold text-gold-300">Inventory & Stock</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Warehousing layouts, storage efficiency, and tracking.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1.5 hover:border-gold-500/40 transition-colors">
+            <h4 class="text-sm font-bold text-gold-300">Modern Digital Tools</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Applying AI and spreadsheet automation in business analytics.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1.5 hover:border-gold-500/40 transition-colors">
+            <h4 class="text-sm font-bold text-gold-300">Business Communication</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">Executive reports, presentations, and stakeholder relations.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS SECTION ==================== -->
+  <section id="skills" class="py-24 relative overflow-hidden bg-navy-950/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider">
+          <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+          <span>Capabilities & Competencies</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white">
+          Skills & <span class="text-gold-gradient">Tool Mastery</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Proficiency in basic computer tools and cutting-edge AI systems.
+        </p>
+        <div class="w-20 h-1 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-4"></div>
+      </div>
+
+      <!-- Skills Interactive Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+        
+        <!-- Skill Group 1: AI Tools -->
+        <div class="lg:col-span-6 glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+          <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+            <div class="w-10 h-10 rounded-xl bg-gold-500/20 flex items-center justify-center text-gold-400">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-serif font-bold text-white">AI Tools & Modern Tech</h3>
+              <p class="text-xs text-slate-400">Prompting, Generative Models & Automation</p>
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <div class="space-y-1.5">
+              <div class="flex justify-between items-center text-sm">
+                <span class="font-semibold text-slate-200">Generative AI (ChatGPT, Claude, Gemini)</span>
+                <span class="text-xs font-mono font-bold text-gold-400">88%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
+                <div class="h-full bg-gradient-to-r from-gold-500 to-amber-300 rounded-full" style="width: 88%"></div>
+              </div>
+              <p class="text-[11px] text-slate-400">Research, structured drafting, case analysis & query refining</p>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between items-center text-sm">
+                <span class="font-semibold text-slate-200">Canva AI & Visual Design</span>
+                <span class="text-xs font-mono font-bold text-gold-400">85%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
+                <div class="h-full bg-gradient-to-r from-gold-500 to-amber-300 rounded-full" style="width: 85%"></div>
+              </div>
+              <p class="text-[11px] text-slate-400">Executive slides, presentations, banners & digital aesthetics</p>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between items-center text-sm">
+                <span class="font-semibold text-slate-200">Prompt Engineering</span>
+                <span class="text-xs font-mono font-bold text-gold-400">82%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
+                <div class="h-full bg-gradient-to-r from-gold-500 to-amber-300 rounded-full" style="width: 82%"></div>
+              </div>
+              <p class="text-[11px] text-slate-400">System prompts, chained reasoning, and structured summaries</p>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between items-center text-sm">
+                <span class="font-semibold text-slate-200">AI-driven Research & Productivity</span>
+                <span class="text-xs font-mono font-bold text-gold-400">84%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
+                <div class="h-full bg-gradient-to-r from-gold-500 to-amber-300 rounded-full" style="width: 84%"></div>
+              </div>
+              <p class="text-[11px] text-slate-400">Speeding up academic literature search and data summaries</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Group 2: Basic Computer & Office -->
+        <div class="lg:col-span-6 glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+          <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400">
+              <i data-lucide="laptop" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-serif font-bold text-white">Basic Computer & Office Applications</h3>
+              <p class="text-xs text-slate-400">Microsoft Office, Spreadsheets & Cloud Systems</p>
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <div class="space-y-1.5">
+              <div class="flex justify-between items-center text-sm">
+                <span class="font-semibold text-slate-200">Microsoft Excel / Spreadsheets</span>
+                <span class="text-xs font-mono font-bold text-gold-400">86%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
+                <div class="h-full bg-gradient-to-r from-blue-500 to-cyan-300 rounded-full" style="width: 86%"></div>
+              </div>
+              <p class="text-[11px] text-slate-400">Formulas, inventory sheets, tables, sorting & basic data entry</p>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between items-center text-sm">
+                <span class="font-semibold text-slate-200">Microsoft Word & Documentation</span>
+                <span class="text-xs font-mono font-bold text-gold-400">90%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
+                <div class="h-full bg-gradient-to-r from-blue-500 to-cyan-300 rounded-full" style="width: 90%"></div>
+              </div>
+              <p class="text-[11px] text-slate-400">Professional formatting, business letters, project reports</p>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between items-center text-sm">
+                <span class="font-semibold text-slate-200">PowerPoint Presentations</span>
+                <span class="text-xs font-mono font-bold text-gold-400">88%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
+                <div class="h-full bg-gradient-to-r from-blue-500 to-cyan-300 rounded-full" style="width: 88%"></div>
+              </div>
+              <p class="text-[11px] text-slate-400">Visual storytelling, college seminars, clean layout design</p>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between items-center text-sm">
+                <span class="font-semibold text-slate-200">OS & Cloud Storage Management</span>
+                <span class="text-xs font-mono font-bold text-gold-400">85%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
+                <div class="h-full bg-gradient-to-r from-blue-500 to-cyan-300 rounded-full" style="width: 85%"></div>
+              </div>
+              <p class="text-[11px] text-slate-400">Windows OS navigation, Google Drive, backup & folder hierarchy</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Ecosystem Badges -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8">
+        <div class="text-center mb-6">
+          <h4 class="text-base font-bold text-white uppercase tracking-wider">
+            Key Software & Applications in Daily Use
+          </h4>
+          <p class="text-xs text-slate-400">Platforms supporting Tanvi's academic and creative output</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-center hover:border-gold-500/40 transition-colors">
+            <div class="text-2xl mb-1">🤖</div>
+            <div class="text-xs font-bold text-white">ChatGPT / Gemini</div>
+            <div class="text-[10px] text-slate-400">AI Prompting</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-center hover:border-gold-500/40 transition-colors">
+            <div class="text-2xl mb-1">🎨</div>
+            <div class="text-xs font-bold text-white">Canva AI</div>
+            <div class="text-[10px] text-slate-400">Visuals & Slides</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-center hover:border-gold-500/40 transition-colors">
+            <div class="text-2xl mb-1">📊</div>
+            <div class="text-xs font-bold text-white">MS Excel</div>
+            <div class="text-[10px] text-slate-400">Data & Tables</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-center hover:border-gold-500/40 transition-colors">
+            <div class="text-2xl mb-1">📝</div>
+            <div class="text-xs font-bold text-white">MS Word</div>
+            <div class="text-[10px] text-slate-400">Reports</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-center hover:border-gold-500/40 transition-colors">
+            <div class="text-2xl mb-1">📽️</div>
+            <div class="text-xs font-bold text-white">PowerPoint</div>
+            <div class="text-[10px] text-slate-400">Presentations</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-center hover:border-gold-500/40 transition-colors">
+            <div class="text-2xl mb-1">☁️</div>
+            <div class="text-xs font-bold text-white">Google Workspace</div>
+            <div class="text-[10px] text-slate-400">Cloud Collab</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== HOBBIES & SPORTS SECTION ==================== -->
+  <section id="hobbies" class="py-24 relative overflow-hidden bg-navy-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider">
+          <i data-lucide="heart" class="w-3.5 h-3.5"></i>
+          <span>Passions & Active Lifestyle</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white">
+          Interests, Hobbies & <span class="text-gold-gradient">Sports</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Expressing energy through dance and music, while building agility and leadership in badminton and basketball.
+        </p>
+        <div class="w-20 h-1 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-4"></div>
+      </div>
+
+      <!-- 4 Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        
+        <!-- 1. Dance -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 border-gold-500/20 group">
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 border border-pink-500/30 flex items-center justify-center text-pink-400 group-hover:scale-110 transition-transform">
+                <i data-lucide="sparkles" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <span class="text-[10px] text-pink-400 uppercase tracking-widest font-bold">Creative Expression</span>
+                <h3 class="text-2xl font-serif font-bold text-white">Dance & Choreography</h3>
+              </div>
+            </div>
+            <span class="text-3xl">💃</span>
+          </div>
+
+          <p class="text-slate-300 text-sm leading-relaxed mb-5">
+            Dancing is my creative sanctuary. It instills bodily rhythm, graceful poise, and the stage confidence that empowers me when delivering public presentations and leading group endeavors.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-xs px-3 py-1 rounded-full bg-slate-900 border border-slate-700/60 text-slate-300">Rhythm & Grace</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-slate-900 border border-slate-700/60 text-slate-300">Stage Confidence</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-slate-900 border border-slate-700/60 text-slate-300">Positive Energy</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-900/80 border border-pink-500/20 text-xs italic text-slate-300">
+            “Dance is the joy of movement — translating emotions into vibrant physical energy.”
+          </div>
+        </div>
+
+        <!-- 2. Listening to Songs / Music -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 border-gold-500/20 group">
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                <i data-lucide="music" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <span class="text-[10px] text-blue-400 uppercase tracking-widest font-bold">Sound & Focus</span>
+                <h3 class="text-2xl font-serif font-bold text-white">Listening to Music</h3>
+              </div>
+            </div>
+            
+            <!-- Animated Equalizer Bars -->
+            <div class="flex items-end gap-1 h-6 px-2.5 py-1 bg-slate-900/80 rounded-lg border border-slate-700">
+              <span class="w-1 bg-gold-400 rounded-full eq-bar-1"></span>
+              <span class="w-1 bg-gold-400 rounded-full eq-bar-2"></span>
+              <span class="w-1 bg-gold-400 rounded-full eq-bar-3"></span>
+              <span class="w-1 bg-gold-400 rounded-full eq-bar-4"></span>
+            </div>
+          </div>
+
+          <p class="text-slate-300 text-sm leading-relaxed mb-5">
+            Music fuels my daily mindset. Melodic tunes provide deep concentration while studying logistics theories, while upbeat songs elevate motivation during training and workout sessions.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-xs px-3 py-1 rounded-full bg-slate-900 border border-slate-700/60 text-slate-300">Focus & Study</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-slate-900 border border-slate-700/60 text-slate-300">Mood Elevation</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-slate-900 border border-slate-700/60 text-slate-300">Mindfulness</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-900/80 border border-blue-500/20 text-xs italic text-slate-300">
+            “Music breathes serenity into thoughts and sets the ideal rhythm for productive work.”
+          </div>
+        </div>
+
+        <!-- 3. Badminton -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 border-gold-500/20 group">
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500/20 to-yellow-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+                <i data-lucide="target" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <span class="text-[10px] text-amber-400 uppercase tracking-widest font-bold">Racquet Sport</span>
+                <h3 class="text-2xl font-serif font-bold text-white">Badminton</h3>
+              </div>
+            </div>
+            <span class="text-3xl">🏸</span>
+          </div>
+
+          <p class="text-slate-300 text-sm leading-relaxed mb-5">
+            I enjoy badminton for its rapid tempo, quick reflexes, and mental acuity. Antcipating your opponent's smash and placing drops accurately demands focus that directly translates into real-world problem solving.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-xs px-3 py-1 rounded-full bg-slate-900 border border-slate-700/60 text-slate-300">Lightning Reflexes</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-slate-900 border border-slate-700/60 text-slate-300">Agile Footwork</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-slate-900 border border-slate-700/60 text-slate-300">Tactical Focus</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-900/80 border border-amber-500/20 text-xs italic text-slate-300">
+            “On the badminton court, agility and razor-sharp reaction time win every rally.”
+          </div>
+        </div>
+
+        <!-- 4. Basketball -->
+        <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 border-gold-500/20 group">
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:scale-110 transition-transform">
+                <i data-lucide="trophy" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <span class="text-[10px] text-orange-400 uppercase tracking-widest font-bold">Team Athletics</span>
+                <h3 class="text-2xl font-serif font-bold text-white">Basketball</h3>
+              </div>
+            </div>
+            <span class="text-3xl">🏀</span>
+          </div>
+
+          <p class="text-slate-300 text-sm leading-relaxed mb-5">
+            Basketball is pure team dynamics: setting screens, reading the fast break, and defending the paint. It has instilled in me the leadership, camaraderie, and endurance required to win together.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-xs px-3 py-1 rounded-full bg-slate-900 border border-slate-700/60 text-slate-300">Team Chemistry</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-slate-900 border border-slate-700/60 text-slate-300">Court Vision</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-slate-900 border border-slate-700/60 text-slate-300">Stamina & Grit</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-900/80 border border-orange-500/20 text-xs italic text-slate-300">
+            “Basketball proves that individual skill achieves points, but cohesive team play wins the game.”
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Philosophy Quote -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 bg-gradient-to-r from-slate-900/90 via-navy-900/90 to-slate-900/90 border border-gold-500/30 text-center space-y-3">
+        <div class="inline-flex items-center gap-2 text-gold-400 text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="flame" class="w-4 h-4"></i>
+          <span>Student Athlete Perspective</span>
+        </div>
+        <h3 class="text-xl sm:text-2xl font-serif font-bold text-white">
+          “Athletic stamina on the court nurtures mental resilience in business logistics.”
+        </h3>
+        <p class="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+          The discipline built through sports and dance directly benefits time management, focus during exams, and collaborating effectively in team projects.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section id="contact" class="py-24 relative overflow-hidden bg-navy-950/90">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider">
+          <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+          <span>Direct Connection</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white">
+          Get In <span class="text-gold-gradient">Touch</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Have an inquiry, project, or opportunity? Contact Tanvi directly via phone, WhatsApp, or message.
+        </p>
+        <div class="w-20 h-1 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Contact Cards Left -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <!-- Direct Phone & WhatsApp -->
+          <div class="glass-card rounded-2xl p-6 space-y-4 border-gold-500/30">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400">
+                <i data-lucide="phone" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Direct Phone</div>
+                <div class="text-lg font-bold text-white font-mono">+91 9412632249</div>
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Available for academic discussions, logistics internships, and collegiate projects.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-2 pt-1">
+              <a href="tel:9412632249" class="flex-1 btn-gold py-2.5 px-4 rounded-xl text-xs font-semibold flex items-center justify-center gap-2">
+                <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                <span>Direct Call</span>
+              </a>
+              <a href="https://wa.me/919412632249?text=Hello%20Tanvi,%20I%20viewed%20your%20portfolio%20website%20and%20would%20like%20to%20connect!" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white transition-colors flex items-center justify-center gap-2 shadow-md shadow-emerald-900/30">
+                <span>WhatsApp Chat</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Residence Address -->
+          <div class="glass-card rounded-2xl p-6 space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-gold-400 shrink-0">
+                <i data-lucide="map-pin" class="w-6 h-6"></i>
+              </div>
+              <div class="space-y-1">
+                <div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Residence Location</div>
+                <div class="text-sm font-semibold text-white leading-snug">
+                  C Block 807, Ram Raghu Ananda Phase-2, Sikandra, Agra
+                </div>
+                <div class="text-xs text-gold-300/80 pt-1">
+                  Landmark: Near Yatharth Hospital, Agra, UP
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <a href="https://www.google.com/maps/search/?api=1&query=Ram+Raghu+Ananda+Phase+2+Sikandra+Agra+near+Yatharth+Hospital" target="_blank" class="btn-outline-gold w-full py-2.5 px-4 rounded-xl text-xs font-semibold flex items-center justify-center gap-2">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-gold-400"></i>
+                <span>View Address on Google Maps</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Institutional Anchor -->
+          <div class="glass-card rounded-2xl p-6 space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-gold-400">
+                <i data-lucide="building" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Dr. MPS Memorial Group of Institutions</h4>
+                <p class="text-xs text-slate-400">BBA Logistics Department • Agra</p>
+              </div>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Open to collaborative academic ventures, collegiate initiatives, and professional networking.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Contact Form Right -->
+        <div class="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8 relative">
+          <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-800">
+            <div>
+              <h3 class="text-xl font-serif font-bold text-white">Send a Message</h3>
+              <p class="text-xs text-slate-400">Reach out to Tanvi Dubey directly</p>
+            </div>
+            <i data-lucide="sparkles" class="w-5 h-5 text-gold-400"></i>
+          </div>
+
+          <div id="contact-success-msg" class="hidden py-10 text-center space-y-4">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 mx-auto">
+              <i data-lucide="check-circle" class="w-8 h-8"></i>
+            </div>
+            <h4 class="text-xl font-serif font-bold text-white">Message Sent Successfully!</h4>
+            <p class="text-slate-300 text-sm max-w-md mx-auto">
+              Thank you for reaching out! Tanvi will review your message and reply back shortly.
+            </p>
+            <div class="pt-2">
+              <button id="send-another-btn" class="btn-outline-gold px-6 py-2 rounded-full text-xs font-semibold">
+                Send Another Message
+              </button>
+            </div>
+          </div>
+
+          <form id="contact-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label class="text-xs font-semibold text-slate-300">Your Full Name *</label>
+                <input
+                  type="text"
+                  id="form-name"
+                  required
+                  placeholder="e.g. Ananya Sharma"
+                  class="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors"
+                />
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="text-xs font-semibold text-slate-300">Your Mobile Number</label>
+                <input
+                  type="tel"
+                  id="form-phone"
+                  placeholder="e.g. +91 9876543210"
+                  class="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label class="text-xs font-semibold text-slate-300">Email Address *</label>
+                <input
+                  type="email"
+                  id="form-email"
+                  required
+                  placeholder="your.email@example.com"
+                  class="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors"
+                />
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="text-xs font-semibold text-slate-300">Subject</label>
+                <input
+                  type="text"
+                  id="form-subject"
+                  placeholder="Internship / Logistics / Inquiry"
+                  class="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors"
+                />
+              </div>
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-xs font-semibold text-slate-300">Your Message *</label>
+              <textarea
+                id="form-message"
+                required
+                rows="4"
+                placeholder="Write your note or inquiry here..."
+                class="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors resize-none"
+              ></textarea>
+            </div>
+
+            <div class="pt-2">
+              <button
+                type="submit"
+                id="submit-btn"
+                class="w-full btn-gold py-3 px-6 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 shadow-lg shadow-gold-500/20"
+              >
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span id="btn-text">Send Message to Tanvi</span>
+              </button>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-navy-950 border-t border-gold-500/20 pt-16 pb-12 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-slate-800">
+        
+        <div class="md:col-span-6 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 to-amber-700 flex items-center justify-center text-navy-950 font-serif font-bold text-lg shadow-md shadow-gold-500/30">
+              TD
+            </div>
+            <span class="font-serif text-2xl font-bold tracking-wide text-white">
+              Tanvi Dubey
+            </span>
+          </div>
+
+          <p class="text-slate-400 text-sm max-w-md leading-relaxed">
+            BBA in Logistics student at <strong class="text-slate-300">Dr. MPS Memorial Group of Institutions</strong>, Agra. 
+            Passionate about AI tools, computer productivity, dance, badminton, and basketball.
+          </p>
+
+          <div class="flex items-center gap-4 text-xs text-slate-400 pt-1">
+            <span class="flex items-center gap-1.5">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-gold-400"></i>
+              <span>Agra, Uttar Pradesh</span>
+            </span>
+            <span class="flex items-center gap-1.5">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-400"></i>
+              <span>+91 9412632249</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-gold-400">Navigation</h4>
+          <ul class="space-y-2 text-sm text-slate-300">
+            <li><a href="#home" class="hover:text-gold-400 transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-gold-400 transition-colors">About Tanvi</a></li>
+            <li><a href="#education" class="hover:text-gold-400 transition-colors">Education & Institute</a></li>
+            <li><a href="#skills" class="hover:text-gold-400 transition-colors">Skills & AI Tools</a></li>
+            <li><a href="#hobbies" class="hover:text-gold-400 transition-colors">Hobbies & Sports</a></li>
+            <li><a href="#contact" class="hover:text-gold-400 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-gold-400">Address Details</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            C Block 807, Ram Raghu Ananda Phase-2, Sikandra, Agra<br />
+            (Near Yatharth Hospital), UP - 282007
+          </p>
+          <p class="text-xs text-slate-400 leading-relaxed pt-2">
+            Dr. MPS Memorial Group of Institutions, Agra
+          </p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <p>
+          Portfolio of <span class="text-gold-400 font-semibold">Tanvi Dubey</span> • Built with elegance and classic design.
+        </p>
+
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-700/80 text-slate-300 hover:text-white hover:border-gold-500/50 transition-all text-xs">
+          <span>Back to top</span>
+          <i data-lucide="arrow-up" class="w-3.5 h-3.5 text-gold-400"></i>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    const toggleBtn = document.getElementById('mobile-toggle-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (toggleBtn && mobileMenu) {
+      toggleBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // Photo fallback & intelligent locator
+    const heroImg = document.getElementById('profile-hero-img');
+    if (heroImg) {
+      const candidates = [
+        'tanvi.jpg',
+        'public/tanvi.jpg',
+        'media_1790336858828.jpg',
+        'C:/Users/u/.gemini/antigravity/brain/7d66fadd-93e8-42dc-a86e-bcc3c58e6b4c/.user_uploaded/media_1790336858828.jpg',
+        'file:///C:/Users/u/.gemini/antigravity/brain/7d66fadd-93e8-42dc-a86e-bcc3c58e6b4c/.user_uploaded/media_1790336858828.jpg'
+      ];
+      let candidateIdx = 0;
+
+      heroImg.onerror = function() {
+        candidateIdx++;
+        if (candidateIdx < candidates.length) {
+          heroImg.src = candidates[candidateIdx];
+        }
+      };
+    }
+
+    // Interactive form submission
+    const contactForm = document.getElementById('contact-form');
+    const successMsg = document.getElementById('contact-success-msg');
+    const sendAnotherBtn = document.getElementById('send-another-btn');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+
+    if (contactForm && successMsg) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        btnText.textContent = "Sending Message...";
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+          contactForm.classList.add('hidden');
+          successMsg.classList.remove('hidden');
+          lucide.createIcons();
+          contactForm.reset();
+          btnText.textContent = "Send Message to Tanvi";
+          submitBtn.disabled = false;
+        }, 600);
+      });
+
+      if (sendAnotherBtn) {
+        sendAnotherBtn.addEventListener('click', () => {
+          successMsg.classList.add('hidden');
+          contactForm.classList.remove('hidden');
+        });
+      }
+    }
+  </script>
+</body>
+</html>
