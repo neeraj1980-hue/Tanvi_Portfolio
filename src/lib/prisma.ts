@@ -1,1 +1,1 @@
-export { prisma, pool, ensureTablesExist } from './db';
+export { pool, ensureTablesExist } from './db';

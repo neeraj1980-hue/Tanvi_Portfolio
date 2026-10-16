@@ -1,21 +1,11 @@
-import type { Metadata } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-  fallback: ['system-ui', 'sans-serif'],
-});
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
-  fallback: ['Georgia', 'serif'],
-  adjustFontFallback: false,
-});
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#060a14',
+};
 
 export const metadata: Metadata = {
   title: 'Tanvi Dubey | Professional Portfolio | BBA Logistics & AI',
@@ -29,8 +19,6 @@ export const metadata: Metadata = {
     'Logistics and AI Portfolio'
   ],
   authors: [{ name: 'Tanvi Dubey' }],
-  viewport: 'width=device-width, initial-scale=1',
-  themeColor: '#060a14',
 };
 
 export default function RootLayout({
@@ -39,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>

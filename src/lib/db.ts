@@ -22,36 +22,8 @@ export const pool =
 
 if (process.env.NODE_ENV !== 'production') globalForPg.pgPool = pool;
 
-// Lazy-loaded Prisma Client to ensure build-time safety
-let _prismaClient: any = null;
-
-export function getPrisma() {
-  if (!_prismaClient) {
-    try {
-      const { PrismaClient } = require('@prisma/client');
-      _prismaClient = new PrismaClient({
-        log: process.env.NODE_ENV === 'development' ? ['warn', 'error'] : ['error'],
-      });
-    } catch (err) {
-      console.warn('PrismaClient lazy load notice:', err);
-      return null;
-    }
-  }
-  return _prismaClient;
-}
-
-export const prisma = new Proxy({} as any, {
-  get(_target, prop) {
-    const client = getPrisma();
-    if (client && prop in client) {
-      return (client as any)[prop];
-    }
-    return undefined;
-  },
-});
-
 /**
- * Initialize database tables directly if not already created
+ * Initialize database tables directly in PostgreSQL if not already created
  */
 export async function ensureTablesExist() {
   if (!connectionString) return;
