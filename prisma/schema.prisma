@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String
+  status    String   @default("UNREAD")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("contact_messages")
+}
+
+model SiteVisitor {
+  id        String   @id @default(cuid())
+  path      String   @default("/")
+  ip        String?
+  userAgent String?
+  visitedAt DateTime @default(now())
+
+  @@map("site_visitors")
+}
+
+model SiteAnalytics {
+  id        String   @id @default("global")
+  pageViews Int      @default(0)
+  inquiries Int      @default(0)
+  updatedAt DateTime @updatedAt
+
+  @@map("site_analytics")
+}

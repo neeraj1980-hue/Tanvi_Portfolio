@@ -1363,19 +1363,35 @@
     const btnText = document.getElementById('btn-text');
 
     if (contactForm && successMsg) {
-      contactForm.addEventListener('submit', function(e) {
+      contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        btnText.textContent = "Sending Message...";
+        btnText.textContent = "Saving to Database...";
         submitBtn.disabled = true;
 
-        setTimeout(() => {
-          contactForm.classList.add('hidden');
-          successMsg.classList.remove('hidden');
-          lucide.createIcons();
-          contactForm.reset();
-          btnText.textContent = "Send Message to Tanvi";
-          submitBtn.disabled = false;
-        }, 600);
+        const payload = {
+          name: document.getElementById('form-name') ? document.getElementById('form-name').value : '',
+          email: document.getElementById('form-email') ? document.getElementById('form-email').value : '',
+          phone: document.getElementById('form-phone') ? document.getElementById('form-phone').value : '',
+          subject: document.getElementById('form-subject') ? document.getElementById('form-subject').value : '',
+          message: document.getElementById('form-message') ? document.getElementById('form-message').value : '',
+        };
+
+        try {
+          await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+        } catch (err) {
+          console.log('Submission note:', err);
+        }
+
+        contactForm.classList.add('hidden');
+        successMsg.classList.remove('hidden');
+        lucide.createIcons();
+        contactForm.reset();
+        btnText.textContent = "Send Message to Tanvi";
+        submitBtn.disabled = false;
       });
 
       if (sendAnotherBtn) {
