@@ -6,12 +6,15 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
+  fallback: ['system-ui', 'sans-serif'],
 });
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
   display: 'swap',
+  fallback: ['Georgia', 'serif'],
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {

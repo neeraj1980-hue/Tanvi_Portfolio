@@ -1,16 +1,4 @@
-import { PrismaClient } from '@prisma/client';
 import { Pool } from 'pg';
-
-// Global variable cache for Next.js hot-reloading
-const globalForPrisma = global as unknown as { prisma: PrismaClient | undefined };
-
-export const prisma =
-  globalForPrisma.prisma ||
-  new PrismaClient({
-    log: process.env.NODE_ENV === 'development' ? ['warn', 'error'] : ['error'],
-  });
-
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
 
 // Direct PostgreSQL Connection Pool (compatible with any Postgres connection string)
 const connectionString =
@@ -34,47 +22,78 @@ export const pool =
 
 if (process.env.NODE_ENV !== 'production') globalForPg.pgPool = pool;
 
+// Lazy-loaded Prisma Client to ensure build-time safety
+let _prismaClient: any = null;
+
+export function getPrisma() {
+  if (!_prismaClient) {
+    try {
+      const { PrismaClient } = require('@prisma/client');
+      _prismaClient = new PrismaClient({
+        log: process.env.NODE_ENV === 'development' ? ['warn', 'error'] : ['error'],
+      });
+    } catch (err) {
+      console.warn('PrismaClient lazy load notice:', err);
+      return null;
+    }
+  }
+  return _prismaClient;
+}
+
+export const prisma = new Proxy({} as any, {
+  get(_target, prop) {
+    const client = getPrisma();
+    if (client && prop in client) {
+      return (client as any)[prop];
+    }
+    return undefined;
+  },
+});
+
 /**
  * Initialize database tables directly if not already created
  */
 export async function ensureTablesExist() {
-  const client = await pool.connect();
+  if (!connectionString) return;
   try {
-    await client.query(`
-      CREATE TABLE IF NOT EXISTS contact_messages (
-        id VARCHAR(64) PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        email VARCHAR(255) NOT NULL,
-        phone VARCHAR(64),
-        subject VARCHAR(255),
-        message TEXT NOT NULL,
-        status VARCHAR(32) DEFAULT 'UNREAD',
-        created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-      );
+    const client = await pool.connect();
+    try {
+      await client.query(`
+        CREATE TABLE IF NOT EXISTS contact_messages (
+          id VARCHAR(64) PRIMARY KEY,
+          name VARCHAR(255) NOT NULL,
+          email VARCHAR(255) NOT NULL,
+          phone VARCHAR(64),
+          subject VARCHAR(255),
+          message TEXT NOT NULL,
+          status VARCHAR(32) DEFAULT 'UNREAD',
+          created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+          updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+        );
 
-      CREATE TABLE IF NOT EXISTS site_visitors (
-        id VARCHAR(64) PRIMARY KEY,
-        path VARCHAR(255) DEFAULT '/',
-        ip VARCHAR(64),
-        user_agent TEXT,
-        visited_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-      );
+        CREATE TABLE IF NOT EXISTS site_visitors (
+          id VARCHAR(64) PRIMARY KEY,
+          path VARCHAR(255) DEFAULT '/',
+          ip VARCHAR(64),
+          user_agent TEXT,
+          visited_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+        );
 
-      CREATE TABLE IF NOT EXISTS site_analytics (
-        id VARCHAR(64) PRIMARY KEY,
-        page_views INT DEFAULT 0,
-        inquiries INT DEFAULT 0,
-        updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-      );
+        CREATE TABLE IF NOT EXISTS site_analytics (
+          id VARCHAR(64) PRIMARY KEY,
+          page_views INT DEFAULT 0,
+          inquiries INT DEFAULT 0,
+          updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+        );
 
-      INSERT INTO site_analytics (id, page_views, inquiries)
-      VALUES ('global', 1, 0)
-      ON CONFLICT (id) DO NOTHING;
-    `);
+        INSERT INTO site_analytics (id, page_views, inquiries)
+        VALUES ('global', 1, 0)
+        ON CONFLICT (id) DO NOTHING;
+      `);
+    } finally {
+      client.release();
+    }
   } catch (err) {
-    console.error('Error ensuring database tables exist:', err);
-  } finally {
-    client.release();
+    console.error('Database connection notice (ensureTablesExist):', err);
   }
 }
